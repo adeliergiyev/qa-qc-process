@@ -1,0 +1,11 @@
+<h1>{{ title }}</h1>
+
+<div id="unsafe-target"></div>
+
+<button (click)="unsafeHtml('<img src=x onerror=alert(1)>')">
+    Inject unsafe HTML (demo)
+</button>
+
+<p>Equality (2 == '2'): {{ isEqual(2, '2') }}</p>
+<p>Score: {{ computeScore([1,2,3,'aaa','longtext']) }}</p>
+``

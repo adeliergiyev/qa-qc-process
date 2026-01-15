@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+
+jobs:
+  build-test-sonar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install
+        run: npm ci
+
+      - name: Test (with coverage)
+        run: npm run test
+
+      - name: SonarCloud Scan
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: npx sonar-scanner \
+          -Dsonar.projectKey=your_org_or_user_angular-sonar-demo \
+          -Dsonar.organization=your_org_key \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.sources=src \
+          -Dsonar.tests=src \
+          -Dsonar.test.inclusions=**/*.spec.ts \
+          -Dsonar.exclusions=**/*.spec.ts,**/*.html,**/*.css,**/*.scss \
+          -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
