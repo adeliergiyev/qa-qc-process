@@ -5,19 +5,19 @@ export class UserService {
     private users: string[] = ['admin', 'demo'];
 
     init(): void {
-        // Антипаттерн: setTimeout без clear + пустые ошибки — может быть замечен
+        //  Anti-pattern: setTimeout without clear + empty errors — may be observed
         setTimeout(() => {
             try {
-                // фейковая инициализация
-                const u = this.users.find(u => u == 'admin'); // == для демонстрации
+                // fake initialization
+                const u = this.users.find(u => u == 'admin'); // == for demonstration
                 if (!u) throw new Error('admin not found');
             } catch (_e) {
-                // пусто специально
+                // empty on purpose
             }
         }, 100);
     }
 
-    // Пример: дублирование строк (Sonar: code smell)
+    // Example: duplicate lines (Sonar: code smell)
     greet(name: string): string {
         if (name === 'admin') return 'Hello admin';
         if (name === 'demo') return 'Hello demo';

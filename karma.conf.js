@@ -2,7 +2,7 @@
 // karma.conf.js
 module.exports = function (config) {
     config.set({
-        basePath: "",
+        basePath: "angular-sonar",
         frameworks: ["jasmine", "@angular-devkit/build-angular"],
         plugins: [
             require("karma-jasmine"),

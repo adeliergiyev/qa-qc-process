@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Output, ViewChild, Input } from '@angular/core';
 import { UserService } from './services/user.service';
 import { weakEncrypt } from './utils/crypto.util';
 
@@ -7,26 +7,27 @@ import { weakEncrypt } from './utils/crypto.util';
     templateUrl: './app.component.html'
 })
 export class AppComponent {
-    title = 'angular-sonar-demo';
+    title = 'angular-sonar';
+    @Input() public loadingText: any;
 
-    // Пример: неиспользуемая переменная (Sonar: code smell)
+    // Example: unused variable (Sonar: code smell)
     private unusedValue: string = 'I am not used';
 
-    // Пример: плохое сравнение == вместо === (Sonar: bug/code smell)
+    // Example: bad comparison == instead of === (Sonar: bug/code smell)
     isEqual(a: any, b: any): boolean {
-        // Нарочно нарушаем правило eqeqeq (ESLint/sonar-ts)
+        // We deliberately violate the eqeqeq rule (ESLint/sonar-ts)
         // eslint-disable-next-line eqeqeq
         return a == b;
     }
 
-    // Пример: потенциальный XSS (innerHTML без санитизации) — Sonar: Vulnerability
+    // Example: potential XSS (innerHTML without sanitization) — Sonar: Vulnerability
     unsafeHtml(html: string): string {
-        // WARNING: демонстрация, не делайте так в реальном коде
+        //WARNING: demonstration, do not do this in real code
         (document.getElementById('unsafe-target') as HTMLElement).innerHTML = html;
         return html;
     }
 
-    // Пример: избыточная сложность (cognitive complexity)
+    // Example: excessive complexity (cognitive complexity)
     computeScore(items: Array<number | string>): number {
         let score = 0;
         for (const item of items) {
@@ -51,18 +52,18 @@ export class AppComponent {
         return score;
     }
 
-    // Пример: логирование секретов (Sonar: Security Hotspot)
+    // Example: Logging secrets (Sonar: Security Hotspot)
     logSensitiveExample(): void {
         const token = weakEncrypt('my-demo-token');
         console.log('Token (do not log secrets):', token);
     }
 
     constructor(private userService: UserService) {
-        // Пример: пустой catch (Sonar: code smell)
+        // Example: empty catch (Sonar: code smell)
         try {
             this.userService.init();
         } catch (e) {
-            // намеренно пусто
+            // deliberately empty
         }
     }
 }
