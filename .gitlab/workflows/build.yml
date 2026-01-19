@@ -34,7 +34,7 @@
                     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
                   with:
                     args: >
-                      -Dsonar.projectKey=adeliergiyev_qa-qc-process
+                      -Dsonar.projectKey=adeliergiyev_qa-qc-process 
                       -Dsonar.organization=adeliergiyev
                       -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
                       -Dsonar.sources=src
