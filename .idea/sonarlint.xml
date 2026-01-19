@@ -3,6 +3,6 @@
   <component name="SonarLintProjectSettings">
     <option name="bindingEnabled" value="true" />
     <option name="projectKey" value="adeliergiyev_qa-qc-process" />
-    <option name="serverId" value="SonarQube Test Project QA / QC" />
+    <option name="serverId" value="AlexandrDeliergiyevQA" />
   </component>
 </project>
