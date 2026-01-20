@@ -66,5 +66,9 @@ export class AppComponent {
             // deliberately empty
         }
     }
+    logSensitiveExample(): void {
+        const token = weakEncrypt('my-demo-token');
+        console.log('Token (do not log secrets):', token);
+    }
 }
 ``
