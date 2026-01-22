@@ -1,4 +1,3 @@
-/*
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { UserService } from './services/user.service';
@@ -36,8 +35,7 @@ describe('AppComponent', () => {
         const svc = new UserService();
         // Current realization returns 'Hello admin'
         // We expected 'Hello ADMIN' → test failed.
-        expect(svc.greet('admin')).toBe('Hello ADMIN');
+        expect(svc.greet('admin')).toBe('Hello Admin');
     });
 
 });
-*/

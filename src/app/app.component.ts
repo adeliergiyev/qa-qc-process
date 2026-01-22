@@ -29,8 +29,6 @@ export class AppComponent {
 
     // Example: excessive complexity (cognitive complexity)
     computeScore(items: Array<number | string>): number {
-
-        let a = 1 == '1';
         let score = 0;
         for (const item of items) {
             if (typeof item === 'number') {
@@ -67,6 +65,11 @@ export class AppComponent {
         } catch (e) {
             // deliberately empty
         }
+    }
+    //test update
+    logSensitiveExample(): void {
+        const token = weakEncrypt('my-demo-token');
+        console.log('Token (do not log secrets):', token);
     }
 }
 ``
