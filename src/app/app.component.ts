@@ -1,6 +1,6 @@
-import { Component, OnInit, Output, ViewChild, Input } from '@angular/core';
 import { UserService } from './services/user.service';
 import { weakEncrypt } from './utils/crypto.util';
+import { Component, OnInit, Output, ViewChild, Input } from '@angular/core';
 
 @Component({
     selector: 'app-root',
