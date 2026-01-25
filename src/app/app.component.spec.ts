@@ -30,6 +30,11 @@ describe('AppComponent', () => {
         expect(app.isEqual(2, '2')).toBeTrue(); // demonstrate loose equality
     });
 
+    it('should show equality caveat with loose comparison', () => {
+        const app = TestBed.createComponent(AppComponent).componentInstance;
+        expect(app.isEqual(2, '2')).toBeTrue(); // demonstrate loose equality
+    });
+
     //Failed test example
     it('should greet admin in uppercase (expected to fail)', () => {
         const svc = new UserService();

@@ -17,6 +17,7 @@ export class AppComponent {
     isEqual(a: any, b: any): boolean {
         // We deliberately violate the eqeqeq rule (ESLint/sonar-ts)
         // eslint-disable-next-line eqeqeq
+        //let variableA = a;
         return a == b;
     }
 
@@ -66,10 +67,7 @@ export class AppComponent {
             // deliberately empty
         }
     }
-    //test update
-    logSensitiveExample(): void {
-        const token = weakEncrypt('my-demo-token');
-        console.log('Token (do not log secrets):', token);
-    }
+    // Example: Logging secrets (Sonar: Security Hotspot)
+
 }
 ``
