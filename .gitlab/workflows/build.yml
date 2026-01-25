@@ -40,5 +40,5 @@
                       -Dsonar.sources=src
                       -Dsonar.tests=src
                       -Dsonar.test.inclusions=**/*.spec.ts
-                      -Dsonar.exclusions=**/*.spec.ts,**/*.html,**/*.css,**/*.scss
+                      -Dsonar.exclusions=**/node_modules/**,**/dist/**
 
