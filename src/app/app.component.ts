@@ -26,8 +26,6 @@ export class AppComponent {
         //WARNING: demonstration, do not do this in real code
         (document.getElementById('unsafe-target') as HTMLElement).innerHTML = html;
         return html;
-        return html;
-        return html;
     }
 
     // Example: excessive complexity (cognitive complexity)
