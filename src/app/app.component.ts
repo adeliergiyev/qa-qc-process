@@ -69,5 +69,7 @@ export class AppComponent {
     }
     // Example: Logging secrets (Sonar: Security Hotspot)
 
+
+
 }
 ``
